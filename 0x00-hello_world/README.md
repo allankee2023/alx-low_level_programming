@@ -1,1 +1,2 @@
-script that compiles a C file but does not link
+#0x00-hello_world
+a description of how the scripts work
