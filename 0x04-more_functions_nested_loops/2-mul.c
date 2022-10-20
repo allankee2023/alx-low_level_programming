@@ -1,13 +1,18 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
-* mul-multiplies 2 digits
-*@a:1st operand
-*@b:2nd operand
-* Return:product of a and b
-*/
-
-int mul(int a, int b)
+ * mul - Multiplies two integers
+ *
+ * @y: integer one
+ *
+ * @x: integer 2
+ *
+ * Return: prints the product.
+ */
+int mul(int y, int x)
 {
-return (a * b);
+	int prod;
+
+	prod = (y * x);
+	return (prod);
 }
