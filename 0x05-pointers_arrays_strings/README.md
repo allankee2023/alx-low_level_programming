@@ -1,1 +1,1 @@
-Writing Pointers and Arrays by allankee2023
+Writing Pointers and Arrays
