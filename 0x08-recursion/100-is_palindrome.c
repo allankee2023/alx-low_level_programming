@@ -1,58 +1,50 @@
-#include "holberton.h"
-
+#include "main.h"
 /**
- * check - Checker for the palindrome
- *
- * @s: String
- *
- * @start: int moves from right to left
- *
- * @end: int move from left to right
- *
- * @pair: int
- *
- * Return: 0 or 1
+ * long_1 - Main Entry
+ * @s: input
+ * Return: 0
  */
 
-int check(char *s, int start, int end, int pair)
+int long_1(char *s)
 {
-	if ((start == end && pair != 0) || (start == end + 1 && pair == 0))
+	if (*s != '\0')
+	{
+		return (1 + long_1(s + 1));
+	}
+	return (0);
+
+}
+/**
+ * compare - Main Entry
+ * @s: input
+ * @l: input
+ * Return: 0
+ */
+int compare(char *s, int l)
+{
+	if (l <= 0)
+	{
 		return (1);
-	else if (s[start] != s[end])
-		return (0);
+	}
+	if (*s == *(s + (l - 1)))
+	{
+		return (compare(s + 1, l - 2));
+	}
 	else
-		return (check(s, start + 1, end - 1, pair));
+	{
+		return (0);
+	}
 }
 
 /**
- * last_index - Returns the last index of a string (counts the null char)
- *
- * @s: Pointer the string
- *
- * Return: int
+ * is_palindrome - Main Entry
+ * @s: input
+ * Return: 0
  */
-
-int last_index(char *s)
-{
-	int n = 0;
-
-	if (*s > '\0')
-		n += last_index(s + 1) + 1;
-
-	return (n);
-}
-
-/**
- * is_palindrome - Check if a string is a palindrome
- *
- * @s: String to check
- *
- * Return: 0 or 1
- */
-
 int is_palindrome(char *s)
 {
-	int end = last_index(s);
+	int l;
 
-	return (check(s, 0, end - 1, end % 2));
+	l = long_1(s);
+	return (compare(s, l));
 }
